@@ -1,0 +1,54 @@
+{{-- @extends('layouts.admin.app')
+@section('content') --}}
+<form onsubmit="event.preventDefault(0)" id="areaAttachForm">
+    @csrf
+<div class="container"> 
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+        <div class="card"> 
+            <div class="card-footer p-0" style="background-color: #04a9f5">
+                <h5 class="text-white m-b-0 text-left" style="padding-top:11px; padding-bottom:11px; border-left:8px solid white; margin-left:10px; padding-left:10px;">Attach Areas  ({{ $zone->name }})</h5>
+               </div>  
+        <div class="card-block">
+           
+                <input type="hidden" name="zoneId" id="zoneId" value="{{ $zone->id }}">
+        <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-xl-6 m-b-30"> 
+        <select id='custom-headers' class="searchable" multiple='multiple' name="areas[]">
+            @foreach ($zone->cities as $city)
+                
+            <option value="{{$city->id }}" selected>{{ $city->name }}</option>  
+            @endforeach
+        @foreach ($cities as $city) 
+        <option value="{{$city->id }}">{{ $city->name }}</option>
+       
+         @endforeach 
+        </select>
+        </div>
+       
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-xl-6"> 
+                <button onclick="attachAreas()" class="btn btn-dark float-right">Submit</button> 
+        </div>
+    </div>
+        </div>
+
+        </div>
+        </div>
+    </div>
+    
+</div>
+</form> 
+<script type="text/javascript" src="https://colorlib.com//polygon/adminty/files/bower_components/select2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="https://colorlib.com//polygon/adminty/files/bower_components/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="https://colorlib.com//polygon/adminty/files/bower_components/multiselect/js/jquery.multi-select.js"></script>
+<script type="text/javascript" src="https://colorlib.com//polygon/adminty/files/assets/js/jquery.quicksearch.js"></script>
+<script type="text/javascript" src="https://colorlib.com//polygon/adminty/files/assets/pages/advance-elements/select2-custom.js"></script> 
+{{-- @endsection
+@section('script') --}}
+ 
+
+{{-- @endsection --}}

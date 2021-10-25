@@ -1,0 +1,1 @@
+<h1>Error !</h1><?php /**PATH E:\newxampp\htdocs\erp2\resources\views/admin/errors/404.blade.php ENDPATH**/ ?>
